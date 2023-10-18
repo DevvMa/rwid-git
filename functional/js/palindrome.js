@@ -5,7 +5,13 @@
  * @param {boolean}
  */
 function isPalindromeUsingReverse(value) {
-  // write your code here
+  let word = Array();
+
+  for (let character of value) word.unshift(character);
+
+  word = word.join("");
+
+  return value === word ? true : false;
 }
 
 /**
@@ -15,7 +21,11 @@ function isPalindromeUsingReverse(value) {
  * @returns {boolean}
  */
 function isPalindromeUsingLoop(value) {
-  // write your code here
+  for (let i = 0; i < value.length; i++) {
+    if (value[i] === value[value.length - 1 - i]) continue;
+    else return false;
+  }
+  return true;
 }
 
 /**
@@ -26,7 +36,11 @@ function isPalindromeUsingLoop(value) {
  * @returns {boolean}
  */
 function isPalindromeUsingRecursive(value, index = 0) {
-  // write your code here
+  if (index == value.length) return true;
+
+  if (value[index] === value[value.length - 1 - index])
+    return isPalindromeUsingRecursive(value, (index += 1));
+  else return false;
 }
 
 /**

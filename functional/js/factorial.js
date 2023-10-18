@@ -5,7 +5,12 @@
  * @returns {number}
  */
 function countFactorialUsingLoop(n) {
-  // write your code here
+  let factorial = 1;
+  for (let i = n; i > 1; i--) {
+    factorial *= i;
+  }
+
+  return factorial;
 }
 
 /**
@@ -15,7 +20,11 @@ function countFactorialUsingLoop(n) {
  * @returns {number}
  */
 function countFactorialUsingRecursive(n) {
-  // write your code here
+  let factorial = n;
+
+  if (n > 1) factorial *= countFactorialUsingRecursive(n - 1);
+
+  return factorial;
 }
 
 /**

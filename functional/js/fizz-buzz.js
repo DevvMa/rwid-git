@@ -10,7 +10,14 @@
  * @returns {("fizz buzz" | "fizz" | "buzz")[]}
  */
 function generateFizzBuzz(sequence) {
-  // write your code here
+  let fizzBuzzSeries = [];
+  let fizzBuzz;
+  for (let i = 1; i < sequence; i++) {
+    fizzBuzz =
+      i % 4 == 0 || i % 7 == 0 ? "fizz buzz" : i % 2 == 0 ? "buzz" : "fizz";
+    fizzBuzzSeries.push(fizzBuzz);
+  }
+  return fizzBuzzSeries;
 }
 
 document.getElementById("form").addEventListener("submit", function (event) {

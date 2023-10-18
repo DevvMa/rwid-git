@@ -5,7 +5,12 @@
  * @returns {number[]}
  */
 function generateFibonacciUsingLoop(sequence) {
-  // write your code here
+  let fibonacciSeries = [0, 1];
+
+  for (let i = 1; i < sequence; i++) {
+    fibonacciSeries.push(fibonacciSeries[i - 1] + fibonacciSeries[i]);
+  }
+  return fibonacciSeries;
 }
 
 /**
@@ -15,7 +20,16 @@ function generateFibonacciUsingLoop(sequence) {
  * @returns {number[]}
  */
 function generateFibonacciUsingRecursive(sequence) {
-  // write your code here
+  let fibonacciSeries = [0, 1];
+
+  if (sequence > 1) {
+    fibonacciSeries = generateFibonacciUsingRecursive(sequence - 1);
+    fibonacciSeries.push(
+      fibonacciSeries[sequence - 2] + fibonacciSeries[sequence - 1],
+    );
+  }
+
+  return fibonacciSeries;
 }
 
 /**
